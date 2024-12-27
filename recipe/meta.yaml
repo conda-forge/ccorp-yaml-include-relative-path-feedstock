@@ -15,17 +15,17 @@ build:
     # patch in LICENSE file
     - curl -sLO https://raw.githubusercontent.com/marsoloGit/ccorp_yaml_include/163789cc516997e033ecc2f488eab2c075c7c66f/LICENSE
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
     - curl
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - ruamel.yaml
 
 test:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/marsoloGit/ccorp_yaml_include
