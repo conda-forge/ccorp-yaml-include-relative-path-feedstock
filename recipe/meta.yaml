@@ -1,5 +1,6 @@
 {% set name = "ccorp-yaml-include-relative-path" %}
 {% set version = "0.0.4" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
